@@ -670,3 +670,66 @@ body {
         width: 90%;
     }
 }
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+/* NAV MOBILE MODE */
+@media (max-width: 768px) {
+
+    nav {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #111;
+        flex-direction: column;
+        width: 180px;
+        padding: 15px;
+        border-radius: 8px;
+        display: none; /* default disembunyikan */
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    nav ul li {
+        margin: 12px 0;
+        text-align: right;
+    }
+
+    nav ul.show {
+        display: flex; /* tampil saat tombol ditekan */
+    }
+
+    /* ANIMASI HAMBURGER JADI "X" */
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
