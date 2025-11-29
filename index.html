@@ -10,14 +10,21 @@
 <body>
 
     <!-- ================= NAVBAR ================= -->
-   <nav>
-    <h1>By Me, Rafi.</h1>
+ <nav>
+    <h1>Rafi</h1>
 
-    <ul>
+    <!-- HAMBURGER MENU -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="nav-menu">
         <li><a href="#home">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#novels">Projects Novels</a></li>
+        <li><a href="#novels">Novels</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -274,5 +281,25 @@ function sendMessage() {
 }
 </script>
 
+    <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("show");
+    });
+
+    // Tutup menu saat link diklik
+    document.querySelectorAll("#nav-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("show");
+        });
+    });
+</script>
+
+
 </body>
 </html>
+
