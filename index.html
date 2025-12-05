@@ -8,7 +8,9 @@
 </head>
 
 <body>
- <nav>
+
+    <!-- ================= NAVBAR ================= -->
+   <nav>
     <h1>Rafi</h1>
 
     <!-- HAMBURGER MENU -->
@@ -20,12 +22,14 @@
 
     <ul id="nav-menu">
         <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#novels">Novels</a></li>
+         <li><a href="aboutme.html">About Me</a></li>
         <li><a href="#skills">Skills</a></li>
+       <li><a href="#projects">Projects</a></li>
+        <li><a href="#novels">Novels</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
+
 
     <!-- ================= HERO ================= -->
     <div class="hero" id="home">
@@ -52,9 +56,9 @@
 
         <div>
             <div class="skill-box">
-                <div class="skill-title">HTML — Expert</div>
-                <div class="skill-bar expert">
-                    <div class="skill-level" style="width: 90%"></div>
+                <div class="skill-title">HTML — Intermediate</div>
+                <div class="skill-bar intermediate">
+                    <div class="skill-level" style="width: 70%"></div>
                 </div>
             </div>
 
@@ -75,7 +79,7 @@
             <div class="skill-box">
                 <div class="skill-title">Python — Beginner</div>
                 <div class="skill-bar beginner">
-                    <div class="skill-level" style="width: 30%"></div>
+                    <div class="skill-level" style="width: 40%"></div>
                 </div>
             </div>
         </div>
@@ -179,6 +183,12 @@
         <td>AI Sederhana</td>
         <td>2025</td>
     </tr>
+     <tr>
+        <td>5</td>
+        <td>Portofolio Web</td>
+        <td>Portofolio</td>
+        <td>2025</td>
+    </tr>
     
 </table>
 
@@ -192,7 +202,7 @@
         </a>
 
         <a href="novel2.html" class="novel-card">
-            <h3>Novel 2 — What is this? Another World?</h3>
+            <h3>Novel 2 — What us this? Another World?</h3>
             <p>Klik untuk melihat detail novel ini.</p>
         </a>
 
@@ -220,7 +230,7 @@
             <img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-new.png" alt="Facebook">
         </a>
 
-        <a href="mailto:raphielgab123@gmail.com" class="icon">
+        <a href="mailto:lambdadelta78@gmail.com" class="icon">
             <img src="https://img.icons8.com/ios-glyphs/30/ffffff/new-post.png" alt="Email">
         </a>
 
@@ -279,7 +289,7 @@ function sendMessage() {
 }
 </script>
 
-    <script>
+<script>
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("nav-menu");
 
@@ -288,7 +298,6 @@ function sendMessage() {
         navMenu.classList.toggle("show");
     });
 
-    // Tutup menu saat link diklik
     document.querySelectorAll("#nav-menu a").forEach(link => {
         link.addEventListener("click", () => {
             hamburger.classList.remove("active");
@@ -300,7 +309,3 @@ function sendMessage() {
 
 </body>
 </html>
-
-
-
-
