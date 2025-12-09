@@ -9,6 +9,14 @@
 
 <body>
 
+<audio id="bg-music" autoplay loop>
+    <source src="lorelei song.mp3" type="audio/mpeg">
+</audio>
+
+<div id="music-btn" class="music-btn">
+    <img id="music-icon" src="https://img.icons8.com/ios-filled/50/ffffff/musical-notes.png">
+</div>
+
     <!-- ================= NAVBAR ================= -->
    <nav>
     <h1>Rafi</h1>
@@ -183,12 +191,6 @@
         <td>AI Sederhana</td>
         <td>2025</td>
     </tr>
-     <tr>
-        <td>5</td>
-        <td>Portofolio Web</td>
-        <td>Portofolio</td>
-        <td>2025</td>
-    </tr>
     
 </table>
 
@@ -306,6 +308,39 @@ function sendMessage() {
     });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("bg-music");
+    const musicBtn = document.getElementById("music-btn");
+    const musicIcon = document.getElementById("music-icon");
+
+    audio.volume = 0.5;
+
+    // Autoplay fix (browser butuh interaksi)
+    const startMusic = () => {
+        audio.play().catch(() => {});
+        document.removeEventListener("click", startMusic);
+        document.removeEventListener("touchstart", startMusic);
+    };
+
+    document.addEventListener("click", startMusic);
+    document.addEventListener("touchstart", startMusic);
+
+    // === TOGGLE PLAY/PAUSE ===
+    let isPlaying = true;
+
+    musicBtn.addEventListener("click", () => {
+        if (isPlaying) {
+            audio.pause();
+            musicIcon.src = "https://img.icons8.com/ios-filled/50/ffffff/mute.png";  
+        } else {
+            audio.play();
+            musicIcon.src = "https://img.icons8.com/ios-filled/50/ffffff/musical-notes.png";
+        }
+        isPlaying = !isPlaying;
+    });
+});
+</script>
 
 </body>
 </html>
