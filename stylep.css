@@ -2,6 +2,33 @@ html {
     scroll-behavior: smooth;
 }
 
+/* === MUSIC BUTTON === */
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #f7f5f5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.music-btn:hover {
+    background: #444;
+}
+
+.music-btn img {
+    width: 28px;
+    filter: invert(1); /* warna putih */
+}
+
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -66,7 +93,7 @@ body {
 
 /* ================= NAVBAR ================= */
 nav {
-    position: flex;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -549,6 +576,8 @@ body {
     cursor: pointer;
 }
 
+/* ================= MOBILE FIX ================= */
+
 /* Navbar mobile mode */
 @media (max-width: 768px) {
     nav {
@@ -561,7 +590,7 @@ body {
 
     nav ul {
         display: flex;
-        flex-wrap: wrap;    
+        flex-wrap: wrap;     /* supaya tidak turun jelek */
         justify-content: flex-end;
         gap: 15px;
     }
@@ -733,4 +762,3 @@ body {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
-
