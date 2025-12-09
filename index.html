@@ -287,9 +287,17 @@ function sendMessage() {
         "Email: " + email + "%0A" +
         "Pesan: " + message;
 
+    // Kirim ke WhatsApp
     window.open("https://wa.me/" + phone + "?text=" + text, "_blank");
+
+    // 🔥 Hapus isi form setelah sukses
+    document.getElementById("contactForm").reset();
+
+    // Opsional, beri notifikasi
+    document.getElementById("formOutput").innerText = "Pesan berhasil dikirim!";
 }
 </script>
+
 
 <script>
     const hamburger = document.getElementById("hamburger");
@@ -344,4 +352,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
